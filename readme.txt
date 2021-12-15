@@ -18,3 +18,6 @@ TECHNICAL:
   ModId being filled out prefixes the enchantment ID
     - enchantmentIDs=yaddayadda
     - enchantmentIDs=mycoolmod:yaddayadda
+
+  Enchantment ID being filled out will override the input pngs name.
+    - overrides name1.png to "[EnchantmentID]_[ModID][Level]"
