@@ -231,3 +231,12 @@ func _on_EnchantmentOverride_text_entered_once(_t):
 		print("_on_EnchantmentOverride_text_entered_once")
 		_on_EnchantmentOverride_text_entered_once = false
 		_enable_bookbutton()
+
+
+func _on_lockontop_toggled(button_pressed):
+	OS.set_window_always_on_top(button_pressed)
+	if button_pressed:
+		$Tween.interpolate_property($Locked, "self_modulate:a", $Locked.self_modulate.a, 1.0, 0.1)
+	else:
+		$Tween.interpolate_property($Locked, "self_modulate:a", $Locked.self_modulate.a, 0.0, 0.1)
+	$Tween.start()

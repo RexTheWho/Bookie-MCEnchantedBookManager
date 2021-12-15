@@ -117,6 +117,9 @@ func _draw_layer(res:int, from_image:Image, to_image:Image, lightness:float = 1.
 			else: # Just black
 				col = Color.black
 			
+			# Lazy fix
+			col.a = 1.0
+			
 			to_image.lock()
 			to_image.set_pixel(x,y,col)
 			to_image.unlock()
