@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://root.gd" type="Script" id=1]
+[ext_resource path="res://empty.png" type="Texture" id=2]
+[ext_resource path="res://mcfont_8px.tres" type="DynamicFont" id=3]
+[ext_resource path="res://mcfont_tiny.tres" type="DynamicFont" id=4]
+[ext_resource path="res://page.ogg" type="AudioStream" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+mod_id = NodePath("ModPath")
+book_button = NodePath("BookButt")
+step_by_step_label = NodePath("Guide")
+warning_label = NodePath("Warning")
+
+[node name="BookButt" type="TextureButton" parent="."]
+self_modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -112.0
+margin_right = 112.0
+margin_bottom = 112.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_disabled = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ModPath" type="LineEdit" parent="."]
+margin_right = 256.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+custom_styles/read_only = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 3 )
+placeholder_text = "ModId eg. \"biggestbookest\""
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Guide" type="Label" parent="."]
+margin_top = 24.0
+margin_right = 146.0
+margin_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.988235, 0.988235, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.243137, 0.243137, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "Drag & Drop sprite to begin!"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Warning" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -64.0
+grow_vertical = 0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.988235, 0.988235, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.243137, 0.243137, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "!! OUTPUT WARNING !!
+YADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDAYADDA..."
+valign = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="pressed" from="BookButt" to="." method="_on_bookbutton_pressed"]
