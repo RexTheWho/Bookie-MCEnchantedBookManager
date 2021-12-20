@@ -8,25 +8,25 @@
 [ext_resource path="res://border.png" type="Texture" id=6]
 [ext_resource path="res://random_book.gd" type="Script" id=7]
 
-[sub_resource type="Theme" id=7]
-
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="Theme" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
-[sub_resource type="StyleBoxEmpty" id=6]
-content_margin_left = 4.0
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=5]
+content_margin_left = 4.0
 
-[sub_resource type="StyleBoxEmpty" id=8]
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = SubResource( 7 )
+theme = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -95,9 +95,9 @@ margin_right = 256.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 0, 20 )
 custom_fonts/font = ExtResource( 3 )
-custom_styles/read_only = SubResource( 1 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/read_only = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 placeholder_text = "ModId eg. \"biggestbookest\""
 __meta__ = {
 "_edit_use_anchors_": false
@@ -109,9 +109,9 @@ margin_right = 256.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 20 )
 custom_fonts/font = ExtResource( 3 )
-custom_styles/read_only = SubResource( 1 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/read_only = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 placeholder_text = "(Optional) Enchantment ID"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -170,11 +170,11 @@ rect_min_size = Vector2( 16, 16 )
 hint_tooltip = "Generate random sprite!"
 custom_constants/hseparation = 0
 custom_fonts/font = ExtResource( 3 )
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
 text = "@Random!"
 flat = true
 __meta__ = {
@@ -194,11 +194,11 @@ rect_min_size = Vector2( 16, 16 )
 hint_tooltip = "Generate random sprite!"
 custom_constants/hseparation = 0
 custom_fonts/font = ExtResource( 3 )
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
 toggle_mode = true
 text = "LockOnTop"
 flat = true

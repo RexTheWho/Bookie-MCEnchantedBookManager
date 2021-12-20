@@ -14,11 +14,10 @@ const COLOR_COLORS = [
 	Color.yellowgreen,
 ]
 
-const COVER_COLORS = []
 const COVER = [
 	preload("res://random_book/book_cover.png"),
-#	preload("res://random_book/book_cover2.png"),
-#	preload("res://random_book/book_cover3.png"),
+	preload("res://random_book/book_cover2.png"),
+	preload("res://random_book/book_cover3.png"),
 ]
 const PAPER = preload("res://random_book/paper.png")
 const BOW = [
@@ -34,11 +33,6 @@ const TEXTS = [
 ]
 
 var book_image:Image
-
-
-func _ready():
-	_debug_get_used_colors( PAPER.get_data() )
-
 
 func generate_book() -> Image:
 	book_image = Image.new()
@@ -123,18 +117,6 @@ func _draw_layer(res:int, from_image:Image, to_image:Image, lightness:float = 1.
 			to_image.lock()
 			to_image.set_pixel(x,y,col)
 			to_image.unlock()
-
-
-
-func _debug_get_used_colors(image:Image):
-	var used_colors = []
-	for x in image.data.width:
-		for y in image.data.height:
-			image.lock()
-			var col:Color = image.get_pixel(x,y)
-			if !used_colors.has(col):
-				used_colors.append(col)
-			image.unlock()
 
 
 func rand_color() -> Color:
